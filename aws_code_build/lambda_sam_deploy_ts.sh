@@ -9,4 +9,5 @@ aws cloudformation package \
 
 aws cloudformation deploy \
   --template-file packaged.yaml \
-  --stack-name lambda-sam-deploy-ts
+  --stack-name lambda-sam-deploy-ts \
+  --capabilities CAPABILITY_IAM
