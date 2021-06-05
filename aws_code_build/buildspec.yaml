@@ -12,4 +12,4 @@ phases:
       - echo finish->lambda_sam_deploy_ts
 artifacts:
   files:
-    - lambda_sam_deploy_ts/built/dev/**/*
+    - built/dev/**/*
