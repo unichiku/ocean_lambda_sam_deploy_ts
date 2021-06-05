@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo start->lambda_sam_deploy_ts
+  build:
+    commands:
+      - sh ocean_lambda_sam_deploy_ts/aws_code_build/lambda_sam_deploy_ts.sh
+  post_build:
+    commands:
+      - echo finish->lambda_sam_deploy_ts
+artifacts:
+  files:
+    - lambda_sam_deploy_ts/built/dev/**/*
