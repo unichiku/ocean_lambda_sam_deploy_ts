@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Globals:
+  Function:
+    Timeout: 2
+  Api:
+    OpenApiVersion: 3.0.2
+Resources:
+  UniLambdaBasicApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: ApigwSamDeployTypescript
+      StageName: Prd
+      GatewayResponses:
+        DEFAULT_4xx:
+          ResponseParameters:
+            Headers:
+              Access-Control-Expose-Headers: "'WWW-Authenticate'"
+              Access-Control-Allow-Origin: "'*'"
+  UniPingFunc:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: PingLambdaSamDeployTypescript
+      Runtime: nodejs14.x
+      Role: arn:aws:iam::260006775748:role/lambda-basic-execution-role
+      CodeUri: ../../built/prd/ping
+      Handler: index.handler
+      MemorySize: 128
+      Events:
+        Vote:
+          Type: Api
+          Properties:
+            Path: /ping
+            Method: get
+            RestApiId: !Ref UniLambdaBasicApi
