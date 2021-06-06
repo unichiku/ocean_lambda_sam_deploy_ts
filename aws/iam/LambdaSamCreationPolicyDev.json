@@ -66,7 +66,8 @@
         "cloudformation:DescribeStacks",
         "cloudformation:DescribeChangeSet",
         "cloudformation:DescribeStackEvents",
-        "cloudformation:ExecuteChangeSet"
+        "cloudformation:ExecuteChangeSet",
+        "cloudformation:GetTemplateSummary"
       ],
       "Resource": ["*"]
     },
@@ -74,9 +75,11 @@
       "Effect": "Allow",
       "Action": [
         "lambda:CreateFunction",
+        "lambda:DeleteFunction",
         "lambda:GetFunction",
         "lambda:AddPermission",
-        "lambda:DeleteFunction"
+        "lambda:RemovePermission",
+        "lambda:UpdateFunctionCode"
       ],
       "Resource": ["*"]
     },
