@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "start->lambda_sam_deploy_ts"
+  build:
+    commands:
+      - sh aws/code_build/lambda_sam_deploy_ts.sh prd
+  post_build:
+    commands:
+      - echo "finish->lambda_sam_deploy_ts"
+artifacts:
+  files:
+    - built/prd/**/*
