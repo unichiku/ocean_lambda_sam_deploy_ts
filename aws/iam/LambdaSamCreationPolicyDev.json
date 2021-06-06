@@ -4,8 +4,8 @@
     {
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:logs:ap-northeast-1:260006775748:log-group:/aws/codebuild/lambda-sam-deploy-ts",
-        "arn:aws:logs:ap-northeast-1:260006775748:log-group:/aws/codebuild/lambda-sam-deploy-ts:*"
+        "arn:aws:logs:ap-northeast-1:260006775748:log-group:/aws/codebuild/lambda_sam_deploy_ts",
+        "arn:aws:logs:ap-northeast-1:260006775748:log-group:/aws/codebuild/lambda_sam_deploy_ts:*"
       ],
       "Action": [
         "logs:CreateLogGroup",
@@ -50,13 +50,13 @@
         "codebuild:BatchPutCodeCoverages"
       ],
       "Resource": [
-        "arn:aws:codebuild:ap-northeast-1:260006775748:report-group/lambda-sam-deploy-ts-*"
+        "arn:aws:codebuild:ap-northeast-1:260006775748:report-group/lambda_sam_deploy_ts-*"
       ]
     },
     {
       "Effect": "Allow",
       "Action": ["iam:PassRole"],
-      "Resource": ["arn:aws:iam::260006775748:role/lambda-basic-execution-role"]
+      "Resource": ["arn:aws:iam::260006775748:role/lambda-sam-deploy-ts-role"]
     },
     {
       "Effect": "Allow",
