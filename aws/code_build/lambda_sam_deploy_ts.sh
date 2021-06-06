@@ -11,7 +11,7 @@ npm i
 npm run build-${STAGE}
 
 aws cloudformation package \
-  --template-file sam/${STAGE}/template.yaml \
+  --template-file aws/sam/${STAGE}/template.yaml \
   --s3-bucket uni-cloudformation-artifact-${STAGE} \
   --s3-prefix sam/lambda_sam_deploy_ts/${STAGE}/package \
   --output-template-file packaged.yaml

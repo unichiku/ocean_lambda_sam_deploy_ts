@@ -6,7 +6,7 @@ phases:
       - echo "start->lambda_sam_deploy_ts"
   build:
     commands:
-      - sh aws_code_build/lambda_sam_deploy_ts.sh dev
+      - sh aws/code_build/lambda_sam_deploy_ts.sh dev
   post_build:
     commands:
       - echo "finish->lambda_sam_deploy_ts"

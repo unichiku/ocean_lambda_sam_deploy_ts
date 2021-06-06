@@ -10,7 +10,7 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       Name: ApigwSamDeployTypescript
-      StageName: Dev
+      StageName: Prd
       GatewayResponses:
         DEFAULT_4xx:
           ResponseParameters:
@@ -23,7 +23,7 @@ Resources:
       FunctionName: PingLambdaSamDeployTypescript
       Runtime: nodejs14.x
       Role: arn:aws:iam::260006775748:role/lambda-basic-execution-role
-      CodeUri: ../../built/dev/ping
+      CodeUri: ../../../built/prd/ping
       Handler: index.handler
       MemorySize: 128
       Events:
