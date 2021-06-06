@@ -22,7 +22,7 @@ Resources:
     Properties:
       FunctionName: PingLambdaSamDeployTypescript
       Runtime: nodejs14.x
-      Role: arn:aws:iam::260006775748:role/lambda-basic-role
+      Role: arn:aws:iam::260006775748:role/lambda-basic-execution-role
       CodeUri: ../../built/dev/ping
       Handler: index.handler
       MemorySize: 128
