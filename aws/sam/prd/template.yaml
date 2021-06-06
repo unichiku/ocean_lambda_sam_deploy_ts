@@ -10,7 +10,7 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       Name: ApigwSamDeployTypescript
-      StageName: Prd
+      StageName: prd
       GatewayResponses:
         DEFAULT_4xx:
           ResponseParameters:
