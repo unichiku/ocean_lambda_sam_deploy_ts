@@ -9,6 +9,7 @@ Resources:
   UniLambdaBasicApi:
     Type: AWS::Serverless::Api
     Properties:
+      Name: ApigwSamDeployTypescript
       StageName: Dev
       GatewayResponses:
         DEFAULT_4xx:
@@ -19,10 +20,12 @@ Resources:
   UniPingFunc:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: PingLambdaSamDeployTypescript
       Runtime: nodejs14.x
       Role: arn:aws:iam::260006775748:role/lambda-basic-role
       CodeUri: ../../built/dev/ping
       Handler: index.handler
+      MemorySize: 128
       Events:
         Vote:
           Type: Api
