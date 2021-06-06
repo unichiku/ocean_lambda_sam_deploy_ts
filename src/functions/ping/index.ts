@@ -7,7 +7,7 @@ const handler = (
 ): void => {
   const result = {
     status: 200,
-    message: "hello :)",
+    message: "hello!😉",
   };
 
   callback(null, {
