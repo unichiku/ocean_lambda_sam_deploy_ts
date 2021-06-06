@@ -1,0 +1,94 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:logs:ap-northeast-1:260006775748:log-group:/aws/codebuild/lambda-sam-deploy-ts",
+        "arn:aws:logs:ap-northeast-1:260006775748:log-group:/aws/codebuild/lambda-sam-deploy-ts:*"
+      ],
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Resource": ["arn:aws:s3:::codepipeline-ap-northeast-1-*"],
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:GetBucketAcl",
+        "s3:GetBucketLocation"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::uni-codebuild-artifact",
+        "arn:aws:s3:::uni-codebuild-artifact/*"
+      ],
+      "Action": ["s3:PutObject"]
+    },
+    {
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::uni-cloudformation-artifact-dev",
+        "arn:aws:s3:::uni-cloudformation-artifact-dev/*"
+      ],
+      "Action": ["s3:GetObject", "s3:PutObject"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "codebuild:CreateReportGroup",
+        "codebuild:CreateReport",
+        "codebuild:UpdateReport",
+        "codebuild:BatchPutTestCases",
+        "codebuild:BatchPutCodeCoverages"
+      ],
+      "Resource": [
+        "arn:aws:codebuild:ap-northeast-1:260006775748:report-group/lambda-sam-deploy-ts-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["iam:PassRole"],
+      "Resource": ["arn:aws:iam::260006775748:role/lambda-basic-execution-role"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:CreateChangeSet",
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeChangeSet",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:ExecuteChangeSet"
+      ],
+      "Resource": ["*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateFunction",
+        "lambda:GetFunction",
+        "lambda:AddPermission",
+        "lambda:DeleteFunction"
+      ],
+      "Resource": ["*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:GET",
+        "apigateway:POST",
+        "apigateway:PATCH",
+        "apigateway:DELETE"
+      ],
+      "Resource": ["*"]
+    }
+  ]
+}
